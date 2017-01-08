@@ -1,0 +1,5 @@
+{
+  "name": "TabCache",
+  "description": "Sends all open tabs to given webhook",
+  "version": "0.01"
+}
