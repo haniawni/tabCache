@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   var SaveActiveButton = document.getElementById('saveActiveTab');
-  SaveActiveButton.addEventListener('click', function() {
-
-    chrome.tabs.query({active: true, lastFocusedWindow: true}, function(tab) {
+  SaveActiveButton.addEventListener('click', saveOnQuery({active: true, lastFocusedWindow: true})
+    function saveOnQuery(object queryOpts){
+      chrome.tabs.query(queryOpts, function(tab) {
       d = document;
 
       var f = d.createElement('form');
@@ -29,5 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
       d.body.appendChild(f);
       f.submit();
     });
+    }
   }, false);
 }, false);
